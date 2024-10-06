@@ -1,0 +1,1 @@
+setup.exe /configure Office365.xml
