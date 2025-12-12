@@ -2,8 +2,6 @@
 
 del /f /q "C:\Windows\Setup\Scripts\*.*"
 
-irm https://get.activated.win | iex
-
 powershell -NoProfile -ExecutionPolicy Bypass -Command "try { $list = Get-WinUserLanguageList; foreach ($l in $list) { $null = $l.InputMethodTips.Remove('0416:00000416') }; Set-WinUserLanguageList $list -Force } catch { Write-Error $_ }"
 
 reg.exe delete "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Systray" /v HideSystray /f
